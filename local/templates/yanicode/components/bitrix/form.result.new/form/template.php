@@ -39,7 +39,7 @@ if ($arResult["isFormErrors"] == "Y"):?><?= $arResult["FORM_ERRORS_TEXT"]; ?><?p
                         <?php if ($arQuestion["CAPTION"] == 'Телефон') :?>
                         <?= str_replace('class="inputtext"', 'class="popup-feedback__input mask-phone-js js-validated-field" data-validated_name="name"', $arQuestion["HTML_CODE"]) ?>
                         <?php else :?>
-                        <?= str_replace('class="inputtext"', 'class="popup-feedback__input js-validated-field" data-validated_name="name"', $arQuestion["HTML_CODE"]) ?>
+                        <?= str_replace('class="inputtext"', 'class="popup-feedback__input js-validated-field" data-validated_name="mail"', $arQuestion["HTML_CODE"]) ?>
                         <?php endif?>
                     </div>
                     <?php if ($count == 2): ?>
