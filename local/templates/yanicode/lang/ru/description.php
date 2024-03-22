@@ -1,4 +1,4 @@
-<?php
-
-$MESS["CFST_TEMPLATE_NAME"] = "YANICODE";
-$MESS["CFST_TEMPLATE_DESC"] = "Сайт для настоящих кодеров :)";
+<?
+$MESS ['T_DEFAULT_DESC_NAME'] = "Общий шаблон";
+$MESS ['T_DEFAULT_DESC_DESC'] = "Общие включаемые файлы, header.php и footer.php по умолчанию.";
+?>

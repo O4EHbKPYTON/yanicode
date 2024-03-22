@@ -1,15 +1,15 @@
 <?
 $aMenuLinks = Array(
-    Array(
-        "ГЛАВНАЯ",
-        "/",
-        Array(),
-        Array(),
-        ""
-    ),
+	Array(
+		"ГЛАВНАЯ", 
+		"/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
 	Array(
 		"УСЛУГИ", 
-		"/services/", 
+		"/services/index.php", 
 		Array(), 
 		Array(), 
 		"" 

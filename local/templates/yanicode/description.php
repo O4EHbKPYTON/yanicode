@@ -1,6 +1,7 @@
 <?php
-
+if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 $arTemplate = [
-  "NAME" => GetMessage("CFST_TEMPLATE_NAME"),
-  "DESCRIPTION" => GetMessage("CFST_TEMPLATE_DESC"),
-];
+    'NAME'=>'yanicode',
+    'DESCRIPTION'=>'description',
+] ;
+?>

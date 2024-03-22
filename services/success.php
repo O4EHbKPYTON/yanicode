@@ -1,37 +1,17 @@
 <?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("SUCCESS");
+require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
+$APPLICATION->SetTitle("success");
 ?>
-<section class="banner banner_before54" style="background-image: url('./assets/images/banner_services.jpg');">
-    <div class="banner-wrapper">
-        <div class="container">
-            <div class="banner__content">
-                <?php
-
-                $APPLICATION->IncludeFile(
-                    INCLUDE_PATH . "/html/services/success.php",
-                    [],
-                    [
-                        "MODE" => "html",
-                    ]
-                );
-
-                echo '<a href="/">';
-
-                $APPLICATION->IncludeFile(
-                    INCLUDE_PATH . "/html/services/button_success.php",
-                    [],
-                    [
-                        "MODE" => "text",
-                    ]
-                );
-
-                echo '</a>';
-
-                ?>
-
+    <main class="website-workarea">
+        <section class="banner banner_before1"
+                 style="background-image: url('<?SITE_TEMPLATE_PATH?>/assets/images/banner_blog.jpg');">
+            <div class="banner-wrapper">
+                <div class="container">
+                    <div class="banner__content">
+                        <h1>Форма успешно отправлена!</h1>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+        </section>
+    </main>
+<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
