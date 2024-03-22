@@ -36,7 +36,11 @@ if ($arResult["isFormErrors"] == "Y"):?><?= $arResult["FORM_ERRORS_TEXT"]; ?><?p
                     <div class="popup-feedback__input-cover">
                         <label for=""
                                class="popup-feedback__input-label"><?= $arQuestion["CAPTION"] ?><?php if ($arQuestion["REQUIRED"] == "Y"): ?><?= $arResult["REQUIRED_SIGN"]; ?><?php endif; ?></label>
+                        <?php if ($arQuestion["CAPTION"] == 'Телефон') :?>
+                        <?= str_replace('class="inputtext"', 'class="popup-feedback__input mask-phone-js js-validated-field" data-validated_name="name"', $arQuestion["HTML_CODE"]) ?>
+                        <?php else :?>
                         <?= str_replace('class="inputtext"', 'class="popup-feedback__input js-validated-field" data-validated_name="name"', $arQuestion["HTML_CODE"]) ?>
+                        <?php endif?>
                     </div>
                     <?php if ($count == 2): ?>
                         </div>
