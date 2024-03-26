@@ -69,12 +69,12 @@ $ASSET->addJs(SITE_TEMPLATE_PATH . '/assets/js/build.js');
                 ); ?>
                 <div class="header__phone">
                     <a href="tel:<?php
-                    $APPLICATION->IncludeFile(INCLUDE_PATH . '/html/phone.php', [],
+                    $APPLICATION->IncludeFile(INCLUDE_PATH . '/phone.php', [],
                         ['SHOW_BORDER' => false, 'MODE' => 'php']);
                     ?>">
                         <?php
                         $APPLICATION->IncludeFile(
-                            INCLUDE_PATH . '/html/phone.php',
+                            INCLUDE_PATH . '/phone.php',
                             [
                             ],
                             ['MODE' => 'text']);
@@ -86,4 +86,4 @@ $ASSET->addJs(SITE_TEMPLATE_PATH . '/assets/js/build.js');
         </div>
     </div>
 </header>
-
+<main class="website-workarea">

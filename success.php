@@ -4,7 +4,7 @@ $APPLICATION->SetTitle("success");
 ?>
 <?php
 $APPLICATION->IncludeFile(
-    INCLUDE_PATH . '/html/serviceSuccess.php',
+    INCLUDE_PATH . '/serviceSuccess.php',
     [
     ],
     ['MODE' => 'html']);

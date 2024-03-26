@@ -3,7 +3,7 @@
 /**
  * @var CMain $APPLICATION
  */ ?>
-
+</main>
 <footer class="footer">
         <div class="container">
             <div class="footer-wrapper">
@@ -11,26 +11,30 @@
                     <img width="232" height="71" src="<?= SITE_TEMPLATE_PATH ?>/assets/images/svg/logo-yanicode.svg"
                          alt="yanicode">
                 </a>
-                <?php $APPLICATION->IncludeComponent("bitrix:menu", "bot", array(
-                    "ROOT_MENU_TYPE" => "bottom",    // Тип меню для первого уровня
-                    "MAX_LEVEL" => "1",    // Уровень вложенности меню
-                    "CHILD_MENU_TYPE" => "left",    // Тип меню для остальных уровней
-                    "USE_EXT" => "Y",    // Подключать файлы с именами вида .тип_меню.menu_ext.php
-                    "COMPONENT_TEMPLATE" => ".default",
-                    "MENU_CACHE_TYPE" => "N",    // Тип кеширования
-                    "MENU_CACHE_TIME" => "3600",    // Время кеширования (сек.)
-                    "MENU_CACHE_USE_GROUPS" => "Y",    // Учитывать права доступа
-                    "MENU_CACHE_GET_VARS" => "",
-                    "DELAY" => "N",
-                    "ALLOW_MULTI_SELECT" => "N",
-                ),
-                    false
-                ); ?>
-
+                <?php $APPLICATION->IncludeComponent(
+	"bitrix:menu", 
+	"catalog_horizontal2", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "left",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "1",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_TYPE" => "N",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"ROOT_MENU_TYPE" => "top",
+		"USE_EXT" => "N",
+		"COMPONENT_TEMPLATE" => "catalog_horizontal2",
+		"MENU_THEME" => "site"
+	),
+	false
+); ?>
                 <div class="footer__law">
                     <?php
                     $APPLICATION->IncludeFile(
-                        INCLUDE_PATH . '/html/law.php',
+                        INCLUDE_PATH . '/law.php',
                         [
                         ],
                         ['MODE' => 'text']);

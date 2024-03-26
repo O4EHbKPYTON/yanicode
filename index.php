@@ -4,7 +4,7 @@ $APPLICATION->SetTitle("Главная страница");
 ?>
 <?php
 $APPLICATION->IncludeFile(
-    INCLUDE_PATH . '/html/banner.php',
+    INCLUDE_PATH . '/banner.php',
     [
     ],
     ['MODE' => 'html']);
@@ -108,4 +108,4 @@ $APPLICATION->IncludeFile(
                 false
             ); ?>
         </div>
-    </section> </main><?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+    </section> <?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
