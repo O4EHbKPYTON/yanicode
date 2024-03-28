@@ -15,7 +15,30 @@ if ($arResult["isFormErrors"] == "Y"):?><?= $arResult["FORM_ERRORS_TEXT"]; ?><?p
             echo $arQuestion["HTML_CODE"];
         } else {
             ?>
+            <?php
+            $class = 'class="';
+            $classReplace = 'class="input' . $arQuestion['STRUCTURE'][0]['FIELD_TYPE'] . '"';
 
+            // Добавляем класс из словаря classes
+            $class .= $classes[$arQuestion['STRUCTURE'][0]['FIELD_TYPE']];
+
+            // Валидация на обезательного поля ввода
+            if($arQuestion['REQUIRED'] === 'Y')
+            {
+                // Добавление валидации поля через JS
+                $class .= ' js-validated-field ';
+
+                $validation = 'data-validated_name="name" required value';
+
+                $arQuestion["HTML_CODE"] = str_replace(
+                    'value',
+                    $validation,
+                    $arQuestion["HTML_CODE"]
+                );
+            }
+
+            $class .= '"';
+            ?>
             <?php if ($arQuestion["CAPTION"] == 'Название компании:') : ?>
                 <div class="popup-feedback__input-cover">
                     <label for=""
@@ -37,9 +60,9 @@ if ($arResult["isFormErrors"] == "Y"):?><?= $arResult["FORM_ERRORS_TEXT"]; ?><?p
                         <label for=""
                                class="popup-feedback__input-label"><?= $arQuestion["CAPTION"] ?><?php if ($arQuestion["REQUIRED"] == "Y"): ?><?= $arResult["REQUIRED_SIGN"]; ?><?php endif; ?></label>
                         <?php if ($arQuestion["CAPTION"] == 'Телефон') :?>
-                        <?= str_replace('class="inputtext"', 'class="popup-feedback__input mask-phone-js js-validated-field"  data-validated_name="phone"', $arQuestion["HTML_CODE"]) ?>
+                        <?= str_replace('class="inputtext"', 'class="popup-feedback__input mask-phone-js js-validated-field"  data-validated_name="phone" required', $arQuestion["HTML_CODE"]) ?>
                         <?php else :?>
-                        <?= str_replace('class="inputtext"', 'class="popup-feedback__input js-validated-field" data-validated_name="mail"', $arQuestion["HTML_CODE"]) ?>
+                        <?= str_replace('class="inputtext"', 'class="popup-feedback__input js-validated-field" data-validated_name="mail" required', $arQuestion["HTML_CODE"]) ?>
                         <?php endif?>
                     </div>
                     <?php if ($count == 2): ?>
@@ -49,7 +72,7 @@ if ($arResult["isFormErrors"] == "Y"):?><?= $arResult["FORM_ERRORS_TEXT"]; ?><?p
                     <div class="popup-feedback__input-cover">
                         <label for=""
                                class="popup-feedback__input-label"><?= $arQuestion["CAPTION"] ?><?php if ($arQuestion["REQUIRED"] == "Y"): ?><?= $arResult["REQUIRED_SIGN"]; ?><?php endif; ?></label>
-                        <?= str_replace('class="inputtext"', 'class="popup-feedback__input js-validated-field" data-validated_name="name"', $arQuestion["HTML_CODE"]) ?>
+                        <?= str_replace('class="inputtext"', 'class="popup-feedback__input js-validated-field" data-validated_name="name" required', $arQuestion["HTML_CODE"]) ?>
                     </div>
                 <?php endif; ?>
                 <?php
@@ -82,7 +105,7 @@ if ($arResult["isFormErrors"] == "Y"):?><?= $arResult["FORM_ERRORS_TEXT"]; ?><?p
     </div>
 
     <div class="popup-feedback__button-cover">
-        <input class="button button_modal-gold js-button-submit" <?= (intval($arResult["F_RIGHT"]) < 10 ? "disabled=\"disabled\"" : ""); ?>
+        <input class="button button_modal-gold js-button-submit" <?php if ($arResult["isFormErrors"] == "N") : ?> <?= (intval($arResult["F_RIGHT"]) < 10 ? "disabled=\"disabled\"" : ""); ?><?php endif ?>
                type="submit"
                name="web_form_submit"
                value="Отправить">

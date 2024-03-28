@@ -13,7 +13,7 @@
                 </a>
                 <?php $APPLICATION->IncludeComponent(
 	"bitrix:menu", 
-	"catalog_horizontal2", 
+	"bottom",
 	array(
 		"ALLOW_MULTI_SELECT" => "N",
 		"CHILD_MENU_TYPE" => "left",
@@ -26,7 +26,7 @@
 		"MENU_CACHE_USE_GROUPS" => "Y",
 		"ROOT_MENU_TYPE" => "top",
 		"USE_EXT" => "N",
-		"COMPONENT_TEMPLATE" => "catalog_horizontal2",
+		"COMPONENT_TEMPLATE" => "bottom",
 		"MENU_THEME" => "site"
 	),
 	false

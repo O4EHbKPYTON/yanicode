@@ -1789,6 +1789,7 @@ a {
   text-decoration: underline; }
 
 .popup-services-cover {
+  display: none;
   margin: -40px -100px;
   background: #c5a262;
   padding: 20px 35px 50px 35px;
