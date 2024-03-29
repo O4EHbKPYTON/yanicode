@@ -15,30 +15,6 @@ if ($arResult["isFormErrors"] == "Y"):?><?= $arResult["FORM_ERRORS_TEXT"]; ?><?p
             echo $arQuestion["HTML_CODE"];
         } else {
             ?>
-            <?php
-            $class = 'class="';
-            $classReplace = 'class="input' . $arQuestion['STRUCTURE'][0]['FIELD_TYPE'] . '"';
-
-            // Добавляем класс из словаря classes
-            $class .= $classes[$arQuestion['STRUCTURE'][0]['FIELD_TYPE']];
-
-            // Валидация на обезательного поля ввода
-            if($arQuestion['REQUIRED'] === 'Y')
-            {
-                // Добавление валидации поля через JS
-                $class .= ' js-validated-field ';
-
-                $validation = 'data-validated_name="name" required value';
-
-                $arQuestion["HTML_CODE"] = str_replace(
-                    'value',
-                    $validation,
-                    $arQuestion["HTML_CODE"]
-                );
-            }
-
-            $class .= '"';
-            ?>
             <?php if ($arQuestion["CAPTION"] == 'Название компании:') : ?>
                 <div class="popup-feedback__input-cover">
                     <label for=""
